@@ -32,7 +32,7 @@
 
     <main role="main">
         <div class="row">
-            <div class="col-lg-8 offset-lg-2 py-5">
+            <div class="col-lg-8 offset-lg-2 py-4">
               @yield("content")
             </div>
         </div>
@@ -46,6 +46,7 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="../../assets/js/vendor/popper.min.js"></script>
     <script src="{{ url('/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url('/app/app.js') }}"></script>
     <script src="../../assets/js/vendor/holder.min.js"></script>
   </body>
 </html>
