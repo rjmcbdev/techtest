@@ -14,6 +14,15 @@ class ForecastController extends Controller
 
 
         /* Validation */
+        if(!isset($request["no-of-studies"])|| !isset($request["growth-per-month"]) || !isset($request["months-to-forecast"])){
+            $data["result"] = array(
+                "flag" => false,
+                "message" => "Entries must not be empty!",
+                "class" => "warning"
+            );
+            return response($data);
+        }
+
         if(!is_numeric($request["no-of-studies"])){
             $data["result"] = array(
                 "flag" => false,
@@ -40,14 +49,15 @@ class ForecastController extends Controller
             return response($data);
         }
 
-        if(empty($request["no-of-studies"])|| empty($request["growth-per-month"]) || empty($request["months-to-forecast"])){
+        if($request["months-to-forecast"] >= 200){
             $data["result"] = array(
                 "flag" => false,
-                "message" => "Entries must not be empty!",
+                "message" => "Months to forecast must be less than 300!",
                 "class" => "warning"
             );
-            return response($data);
+            // return response($data);
         }
+
         /* End Validation */
 
         $studies = new Studies();
