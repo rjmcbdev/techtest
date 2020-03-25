@@ -24,7 +24,7 @@ $(function(){
         $.ajax({
             dataType : "json",
             type : "GET",
-            url : "/forecast/get-forecast",
+            url : "/forecast",
             data : formData
             ,beforeSend : function(){
 
