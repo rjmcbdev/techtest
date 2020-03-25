@@ -43,20 +43,17 @@
 
 
 
-<table class="mt-2 table table-bordered">
+<table id="forecast-table" class="mt-2 table table-bordered">
     <thead>
         <tr>
             <th>Month</th>
+            <th>Days</th>
             <th>Number of Studies</th>
             <th>Forecasted Cost</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+
     </tbody>
 </table>
 

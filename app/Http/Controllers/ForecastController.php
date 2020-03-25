@@ -20,7 +20,7 @@ class ForecastController extends Controller
 
 
         /*getting the forecast */
-        $data = $forecast->calculateCost()
+        $data["result"] = $forecast->calculateCost()
                          ->getForecast();
 
         return response($data);

@@ -43,10 +43,10 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="{{ url('/jquery/jquery.min.js') }}"></script>
-        <script src="../../assets/js/vendor/popper.min.js"></script>
     <script src="{{ url('/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url('/plugins/mustache/mustache.min.js') }}"></script>
     <script src="{{ url('/app/app.js') }}"></script>
 
-    <script src="../../assets/js/vendor/holder.min.js"></script>
+
   </body>
 </html>
