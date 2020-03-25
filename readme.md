@@ -9,15 +9,16 @@ Frameworks and Plugins Used
 ======
 
 PHP Framework : Laravel <br/>
-Javascript : jQuery<br/>
-Javascript Plugins : Datatables,Mustache,SweetAlert,WaitMe<br/>
+CSS Library : Bootstrap <br/>
+Javascript : jQuery <br/>
+Javascript Plugins : Datatables,Mustache,SweetAlert,WaitMe <br/>
 
 
 How to install
 =============
 
 You must first have Composer installed. Get installer here : https://getcomposer.org/download/<br/>
-Once composer is installed, download laravel using Composer.  <code>composer global require laravel/installer</code>
+Once composer is installed, download laravel using Composer.  <code>composer global require laravel/installer</code><br/>
 Clone or Download this repo <code>https://github.com/rjmcbdev/techtest.git</code> <br/>
 After downloading, open your favorite terminal application and go to the directory of your downloaded repo.<br/>
 Copy the ".env.example" file and rename it as ".env"<br/>
