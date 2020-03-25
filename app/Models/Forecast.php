@@ -45,6 +45,7 @@ class Forecast
 
         while($month != $noOfMonths){
 
+            //considering forecast must be done next month
              $nextDate = date("Y-m-d",strtotime(" +" . $month . " months"));
              $days = date("t",strtotime($nextDate));
 
@@ -93,7 +94,7 @@ class Forecast
      }
 
      function getMonthlyStorageCost($cost,$days){
-        $totalStorageCost = ($days * 24) * $cost ; //per day
+        $totalStorageCost = ($days * 24) * $cost ; //per month
         return $totalStorageCost;
      }
 
@@ -105,14 +106,7 @@ class Forecast
 
 
     public function getForecast(){
-
-
         return $this->data;
-
-
-
-
-
     }
 
 

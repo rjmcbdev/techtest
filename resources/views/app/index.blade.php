@@ -15,21 +15,23 @@
           </button>
         </div>
         <div class="modal-body">
+            <form id="forecast-form">
             <div class="form-group">
                 <label for="no-of-studies">No. of Studies</label>
-                <input type="number" class="form-control" placeholder="No of studies">
+                <input type="number" name="no-of-studies" class="form-control" placeholder="No of studies">
             </div>
             <div class="form-group">
                 <label for="no-of-studies">Growth per Month(%)</label>
-                <input type="number" class="form-control" placeholder="Growth per Month">
+                <input type="number" name="growth-per-month" class="form-control" placeholder="Growth per Month">
             </div>
             <div class="form-group">
                 <label for="no-of-studies">Months to Forecast</label>
-                <input type="number" class="form-control" placeholder="Months to forecast">
+                <input type="number" name="months-to-forecast" class="form-control" placeholder="Months to forecast">
             </div>
+        </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Check forecast</button>
+          <button type="button" id="btn-get-forecast" class="btn btn-primary">Get forecast</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
