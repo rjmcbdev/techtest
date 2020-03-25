@@ -57,6 +57,7 @@ class Forecast
              $storageCost = $this->getStorageCost($storage);
              $monthlyCost = $this->getTotalCost($storageCost,$ramCostPerMonth);
             $this->data[] = array(
+                "monthYearStr" => date("mY",strtotime($nextDate)),
                 "month" => date("M Y",strtotime($nextDate)),
                 "days" => $days,
                 "noOfStudies" => $noOfStudies,

@@ -2,9 +2,7 @@
 
 @section("content")
 
-<button id="btn-check-forecast" class=" btn btn-primary btn-md">Forecast</button>
-
-
+<button id="btn-check-forecast" class=" mb-2 btn btn-primary btn-md">Forecast</button>
 <div id="forecast-modal" class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-md" role="document">
       <div class="modal-content">

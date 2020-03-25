@@ -10,9 +10,8 @@
     <title>App</title>
   <!-- Bootstrap core CSS -->
     <link href="{{ url('/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-
-
-
+    <link href="{{ url('/plugins/datatables/datatables.min.css') }}" rel="stylesheet">
+    <link href="{{ url('/plugins/datatables/datatables.buttons.min.css') }}" rel="stylesheet">
   </head>
 
   <body>
@@ -46,6 +45,14 @@
     <script src="{{ url('/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ url('/plugins/mustache/mustache.min.js') }}"></script>
     <script src="{{ url('/app/app.js') }}"></script>
+    <!---datatables scripts start--->
+    <script src="{{ url('/plugins/datatables/datatables.min.js') }}"></script>
+    <script src="{{ url('/plugins/datatables/datatables.buttons.min.js') }}"></script>
+    <script src="{{ url('/plugins/datatables/datatables.html5buttons.min.js') }}"></script>
+    <script src="{{ url('/plugins/datatables/datatables.jszip.min.js') }}"></script>
+    <script src="{{ url('/plugins/datatables/datatables.pdfmake.min.js') }}"></script>
+    <script src="{{ url('/plugins/datatables/datatables.vfsfonts.min.js') }}"></script>
+    <!---datatables scripts end--->
 
 
   </body>
