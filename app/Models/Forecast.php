@@ -54,18 +54,21 @@ class Forecast
              $ramCostPerHr = $this->getRamCostPerHr($ram);
              $ramCostPerMonth = $this->getRamCostPerMonth($ramCostPerHr,$days);
              $storage = $this->getTotalStorage($noOfStudies);
-             $storageCost = $this->getStorageCost($storage,$days);
-
+             $storageCost = $this->getStorageCost($storage);
+             $monthlyCost = $this->getTotalCost($storageCost,$ramCostPerMonth);
             $this->data[] = array(
                 "month" => date("M Y",strtotime($nextDate)),
                 "days" => $days,
                 "noOfStudies" => $noOfStudies,
+                "noOfStudiesFormatted" => number_format( $noOfStudies, 2, '.', ',' ),
                 "ram" => $ram,
                 "ramCostPerHr" => $ramCostPerHr,
                 "ramCostPerMonth" => $ramCostPerMonth,
                 "storageInMB" => $storage,
                 "storageInGB" => $storage / 1000,
-                "storageCost" => $storageCost
+                "storageCost" => $storageCost,
+                "monthlyCost" => $monthlyCost,
+                "monthlyCostFormatted" => number_format($monthlyCost,2) . "$"
             );
             $month++;
         }
@@ -100,6 +103,12 @@ class Forecast
         $cost = $storage * $this->storageCost; //per hour
        return $cost;
      }
+
+     function getTotalCost($storageCost,$ramCost){
+         $totalCost  = $storageCost + $ramCost;
+         return $totalCost;
+     }
+
 
 
 
