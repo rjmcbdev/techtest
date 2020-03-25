@@ -18,4 +18,17 @@ How to install
 
 You must first have Composer installed. Get installer here : https://getcomposer.org/download/<br/>
 Once composer is installed, download laravel using Composer.  <code>composer global require laravel/installer</code>
+Clone or Download this repo <code>https://github.com/rjmcbdev/techtest.git</code> <br/>
+After downloading, open your favorite terminal application and go to the directory of your downloaded repo.<br/>
+Copy the ".env.example" file and rename it as ".env"<br/>
+On the directory of the app, use your favorite terminal application and then type : <code>php artisan key:generate</code><br/>
+Once done, type <code>php artisan serve</code> on your terminal to be able to start the Laravel server.<br/>
+When Laravel server starts, it will prompt "Laravel development server started: <http://127.0.0.1:8000>"<br/>
+You may now access the web application thru this link : http://127.0.0.1:8000
+
+
+
+
+
+
 
