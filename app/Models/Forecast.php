@@ -11,7 +11,7 @@ class Forecast
     private $noOfMonths;
 
     protected $ramPerStudy = 0.5; //0.5mb per study
-    protected $ramCostPerHour = 0.00000553; //0.00553 in USD
+    protected $ramCostPerHour = 0.00000553; // ram cost per MB
     protected $storagePerStudy = 10; //10mb per study
     protected $storageCost = 0.0001; //0.0001 per MB
 
@@ -43,7 +43,7 @@ class Forecast
         $noOfMonths = $this->getNoOfMonths();
         $month = 1;
 
-        while($month != $noOfMonths){
+        while($month <= $noOfMonths){
 
             //considering forecast must be done next month
              $nextDate = date("Y-m-d",strtotime(" +" . $month . " months"));
@@ -56,8 +56,8 @@ class Forecast
              $storage = $this->getTotalStorage($noOfStudies);
              $storageCost = $this->getStorageCost($storage);
              $monthlyCost = $this->getTotalCost($storageCost,$ramCostPerMonth);
-            $this->data[] = array(
-                "monthYearStr" => date("mY",strtotime($nextDate)),
+             $this->data[] = array(
+                "monthYearStr" => date("Ym",strtotime($nextDate)),
                 "month" => date("M Y",strtotime($nextDate)),
                 "days" => $days,
                 "noOfStudies" => $noOfStudies,
@@ -109,9 +109,6 @@ class Forecast
          $totalCost  = $storageCost + $ramCost;
          return $totalCost;
      }
-
-
-
 
 
 

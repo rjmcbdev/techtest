@@ -12,6 +12,8 @@
     <link href="{{ url('/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url('/plugins/datatables/datatables.min.css') }}" rel="stylesheet">
     <link href="{{ url('/plugins/datatables/datatables.buttons.min.css') }}" rel="stylesheet">
+    <link href="{{ url('/plugins/waitme/waitme.min.css') }}" rel="stylesheet">
+    <link href="{{ url('/plugins/sweetalert/swal.min.css') }}" rel="stylesheet">
   </head>
 
   <body>
@@ -22,9 +24,7 @@
           <a href="#" class="navbar-brand d-flex align-items-center">
             <strong>Forecast App</strong>
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+
         </div>
       </div>
     </header>
@@ -53,6 +53,12 @@
     <script src="{{ url('/plugins/datatables/datatables.pdfmake.min.js') }}"></script>
     <script src="{{ url('/plugins/datatables/datatables.vfsfonts.min.js') }}"></script>
     <!---datatables scripts end--->
+    <!---swal scripts start--->
+    <script src="{{ url('/plugins/sweetalert/swal.min.js') }}"></script>
+    <!---swal scripts end--->
+    <!---waitme scripts start--->
+    <script src="{{ url('/plugins/waitme/waitme.min.js') }}"></script>
+    <!---waitme scripts end--->
 
 
   </body>

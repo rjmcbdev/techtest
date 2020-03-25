@@ -20,7 +20,7 @@
             </div>
             <div class="form-group">
                 <label for="no-of-studies">Growth per Month(%)</label>
-                <input type="number" name="growth-per-month" class="form-control" placeholder="Growth per Month">
+                <input type="number" name="growth-per-month" max="1000" class="form-control" placeholder="Growth per Month">
             </div>
             <div class="form-group">
                 <label for="no-of-studies">Months to Forecast</label>
@@ -29,7 +29,7 @@
         </form>
         </div>
         <div class="modal-footer">
-          <button type="button" id="btn-get-forecast" class="btn btn-primary">Get forecast</button>
+          <button type="button" id="btn-get-forecast" class="btn btn-primary">Get Forecast</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -40,20 +40,21 @@
 
 
 
+<div id="forecast-table-container">
+    <table id="forecast-table" class="mt-2 table table-bordered">
+        <thead>
+            <tr>
+                <th>Month</th>
+                <th>Number of Studies</th>
+                <th>Forecasted Cost</th>
+            </tr>
+        </thead>
+        <tbody>
 
-<table id="forecast-table" class="mt-2 table table-bordered">
-    <thead>
-        <tr>
-            <th>Month</th>
-            <th>Days</th>
-            <th>Number of Studies</th>
-            <th>Forecasted Cost</th>
-        </tr>
-    </thead>
-    <tbody>
+        </tbody>
+    </table>
 
-    </tbody>
-</table>
+</div>
 
 
 @endsection
