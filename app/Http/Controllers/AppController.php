@@ -10,10 +10,17 @@ class AppController extends Controller
 {
     function index(){
         $studies = new Studies();
-        $studies->setNoOfStudies(1);
+        $studies->setNoOfStudies(300)
+        ->setGrowthPerMonth(0);//in percent
         $forecast = new Forecast($studies);
+        $forecast->setNoOfMonths(5);
 
+        $data = $forecast->calculateCost()
+        ->getForecast();
 
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";
 
 
 

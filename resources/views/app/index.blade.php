@@ -45,7 +45,7 @@
     <thead>
         <tr>
             <th>Month</th>
-            <th>Number of Cases</th>
+            <th>Number of Studies</th>
             <th>Forecasted Cost</th>
         </tr>
     </thead>
