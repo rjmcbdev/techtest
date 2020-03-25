@@ -51,35 +51,43 @@ class Forecast
 
              $noOfStudies = $this->calculateStudiesGrowth($noOfStudies,$growthPerMonth);
              $ram = $this->getTotalRam($noOfStudies);
-             $ramCost = $this->getTotalRamCost($ram);
+             $ramCostPerHr = $this->getRamCostPerHr($ram);
+             $ramCostPerMonth = $this->getRamCostPerMonth($ramCostPerHr,$days);
              $storage = $this->getTotalStorage($noOfStudies);
-             $storageCost = $this->getStorageCostPerHr($storage,$days);
-             $monthlyStorageCost = $this->getMonthlyStorageCost($storageCost,$days);
+             $storageCost = $this->getStorageCost($storage,$days);
 
             $this->data[] = array(
                 "month" => date("M Y",strtotime($nextDate)),
                 "days" => $days,
                 "noOfStudies" => $noOfStudies,
                 "ram" => $ram,
-                "ramCost" => $ramCost,
+                "ramCostPerHr" => $ramCostPerHr,
+                "ramCostPerMonth" => $ramCostPerMonth,
                 "storageInMB" => $storage,
                 "storageInGB" => $storage / 1000,
-                "storageCostPerHr" => $storageCost,
-                "monthlyStorageCost" => $monthlyStorageCost,
+                "storageCost" => $storageCost
             );
             $month++;
         }
         return $this;
     }
 
+    function calculateStudiesGrowth($noOfStudies,$growthPerMonth){
+        $studiesGrowth = $noOfStudies + ($noOfStudies * ($growthPerMonth * .01));
+        return $studiesGrowth;
+    }
 
     function getTotalRam($noOfStudies){
         $ram = $noOfStudies * $this->ramPerStudy;
         return $ram;
     }
 
-    function getTotalRamCost($ram){
+    function getRamCostPerHr($ram){
          $ramCost = $ram * $this->ramCostPerHour;
+         return $ramCost;
+    }
+    function getRamCostPerMonth($ramCost,$days){
+         $ramCost = $ramCost * ($days * 24);
          return $ramCost;
     }
     function getTotalStorage($noOfStudies){
@@ -88,20 +96,12 @@ class Forecast
     }
 
 
-    function getStorageCostPerHr($storage,$days){
+    function getStorageCost($storage){
         $cost = $storage * $this->storageCost; //per hour
        return $cost;
      }
 
-     function getMonthlyStorageCost($cost,$days){
-        $totalStorageCost = ($days * 24) * $cost ; //per month
-        return $totalStorageCost;
-     }
 
-    function calculateStudiesGrowth($noOfStudies,$growthPerMonth){
-        $studiesGrowth = $noOfStudies + ($noOfStudies * ($growthPerMonth * .01));
-        return $studiesGrowth;
-    }
 
 
 
